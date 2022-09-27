@@ -1,18 +1,20 @@
 const person = {
   age: parseInt(prompt("¿Cuantos años tenés?")),
-  gotID: parseInt(
-    prompt("¿Tenés tu documento?: Escribí: 1 si lo tenés o 0 si no lo tenés")
-  ),
 };
 
-if (person.age >= 18 && person.age < 21) {
-  if (person.gotID) {
-    console.log("Podés pasar");
-  } else if (!person.gotID) {
-    console.log("No podés pasar");
-  }
+if (person.age < 18) {
+  alert("No podés pasar");
 } else if (person.age > 20) {
-  console.log("Podés pasar");
-} else {
-  console.log("No podés pasar");
+  alert("Podés pasar");
+}
+
+if (person.age >= 18 && person.age < 21) {
+  person.gotID = parseInt(
+    prompt("¿Tenés tu documento?: Escribí: 1 si lo tenés o 0 si no lo tenés")
+  );
+  if (person.gotID) {
+    alert("Podés pasar");
+  } else if (!person.gotID) {
+    alert("No podés pasar");
+  }
 }
