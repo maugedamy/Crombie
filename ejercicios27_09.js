@@ -8,22 +8,63 @@ for (let i = 0; i < notas.length; i++) {
   }
 }
 
+//-----------------------------------------------------------------
 let alumnos = [
-  { nombre: "eugenia", nota: 10 },
+  { nombre: "Eugenia", nota: 10 },
   { nombre: "maria", nota: 9 },
   { nombre: "Lorena", nota: 8 },
   { nombre: "Florencia", nota: 7 },
   { nombre: "Pablo", nota: 6 },
   { nombre: "Juan", nota: 5 },
   { nombre: "Joaquin", nota: 3 },
-  { nombre: "Agustina", nota: 6 },
+  { nombre: "Agustina", nota: 10 },
 ];
 
-let mejorAlumno = [
+let mejoresAlumnos = [
   {
     nombre: "mejor",
     nota: 0,
   },
 ];
 
-for (let i = 0; i < alumnos.length; i++) {}
+for (let i = 0; i < alumnos.length; i++) {
+  if (alumnos[i].nota > mejoresAlumnos[0].nota) {
+    mejoresAlumnos = [alumnos[i]];
+  } else if (alumnos[i].nota == mejoresAlumnos[0].nota) {
+    mejoresAlumnos.push(alumnos[i]);
+  }
+}
+
+mejoresAlumnos.forEach((mejorAlumno) => {
+  console.log(mejorAlumno);
+});
+
+//-----------------------------------------------------------------------------
+
+let array = [6, 8, 5, 1, 7, 3, 2, 4, 10, 9];
+
+function bubbleSort(array) {
+  let swapped;
+  do {
+    swapped = false;
+    array.forEach((number, index) => {
+      if (number > array[index + 1]) {
+        [array[index], array[index + 1]] = [array[index + 1], array[index]];
+        swapped = true;
+      }
+    });
+  } while (swapped);
+  return array;
+}
+
+console.log(bubbleSort(array));
+
+//------------------------------------------------------------------------------------------
+
+let letters = ["a", "F", "d", "n", "S", "N", "O", "c"];
+
+letters.forEach((letter) => {
+  if (letter.toUpperCase() === letter) {
+    console.log(`${letter} es mayúscula`);
+  }
+});
