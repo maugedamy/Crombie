@@ -2,7 +2,6 @@ function longestParam(string1, string2) {
   if (string2.length < string1.length) {
     return string1;
   } else return string2;
-  //
 }
 
 console.log(longestParam("caja", "string"));
